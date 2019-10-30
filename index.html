@@ -34,38 +34,33 @@
       // Request user to enter the length of the password
       var number = parseInt(prompt("Enter length of password.* Length must be between 8 and 128 characters",""));
       // Confirm whether user wants to use lower case letters 
-      var selectLowerCase = confirm("Would you like to use lower case letters?");
+      var selectlowerCase = confirm("Would you like to use lower case letters?");
       // Confirm whether user wants to use upper case letters
       var selectUpperCase = confirm("Would you like to use upper case letters?");
       //Confirm whether user wants to use special symbols
       var selectSpecial = confirm("Would you like to user special characters?");
   
-      // If the number entered is less than 8
-      if (number < 8) {
-        // ALert user might be redundant.
+      // Requirements for password lenght
+      if (number <= 7) {
+        // ALert user - might be redundant.
         alert("The number you entered " + number + " does not meet the length requirement.");
         var number = parseInt(prompt("Enter length of password.* Length must be between 8 and 128 characters",""));
-      }else if (number > 100){
+      } else if (number >= 101){
         parseInt(prompt("Please enter a number from 8 to 128"))
       } else if (isNan(number)){
         parseInt(prompt("Please enter a number from 8 to 128"))
         //Number of characters in password
       } else(){
       }
+      // Create for loop to choose password characters
+      for (var i = 0; i<= number;i++){
+          userPassword = userPassword + 
+      }
 
-      function lower
   
       // Function that will generate the password 
-      alert("I have more than " + gandalf.aliases.length + " aliases");
-  
-      // Non-existent properties return undefined
-      alert("My designation is " + gandalf["designation"]);
-  
-      // Objects can also contain other objects, whose properties can be accessed by chaining dot notation
-      alert("My favorite song was written by " + gandalf.favoriteSong.artist);
-  
-      // Or with bracket notation
-      alert("My favorite song is " + gandalf["favoriteSong"]["name"]);
+
+
     </script>
   </body>
 </html>
