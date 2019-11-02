@@ -31,7 +31,7 @@
       var userPassword = "";
       var passwordGroup = "";
 
-      // Request user to enter the length of the password
+      //Request user to enter the length of the password
       var plength = parseInt(prompt("Enter length of password.",""));
 
       
@@ -52,17 +52,16 @@
       var selectSpecial = confirm("Would you like to user special characters?");
 
 
-
+      //Call function to generate password 
       generatePassword();
 
       alert("Your Password is: "+ userPassword);
-
+      //Write generated password on page
       document.getElementById("password").innerHTML = userPassword;
 
       
 
       //Generate password. If user selected an option, randomly select a character from that string. Then from those options randomly pick characters with the maximum number of characters being the user length.
-    
       function generatePassword() {
         if (selectLowerCase) {
         passwordGroup += lowerCase;
@@ -84,8 +83,7 @@
         return userPassword;
       }
 
-      //Copy to Clipboard
-
+      //Copy the password to clipboard
       function copyPassword(){
         var copyText = document.getElementById("password");
         copyText.select();
