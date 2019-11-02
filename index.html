@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
+
+  <title>Password Generator</title>
   </head>
+
   <body>
     <header>
       <h1>Password Generator</h1>
@@ -22,44 +24,62 @@
       Copy to Clipboard
     </button>
 
-    <script type="text/javascript">
-      var length = 0;
-      var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-      var Uppercase = lowerCase.toUpperCase();
-      var numbers = "1234567890";
-      var specialCharacter = "!#$%&'()*+,-./:;?@[\]^_`{|}~'<=>";
-      var userPassword = "";
+    <p id="userPass"></p>
 
-  
+    <script type="text/javascript">
+      //Set variables for user selected length, user options, and stored 
+      var plength = 0;
+      var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+      var upperCase = lowerCase.toUpperCase();
+      var numbers = "1234567890";
+      var specialCharacter = "!#$%&'()*+,-./:;?@][^_`{|}~'<=>";
+      var userPassword = "";
+      var passwordGroup = "";
       // Request user to enter the length of the password
-      var number = parseInt(prompt("Enter length of password.* Length must be between 8 and 128 characters",""));
+      var plength = parseInt(prompt("Enter length of password.* Length must be between 8 and 128 characters",""));
+
+      //Requirements for password length
+      while (plength < 8 || plength > 128) {
+        var plength = parseInt(prompt("Enter length of password.* Length must be between 8 - 128 characters",""));
+
+      } 
+      
       // Confirm whether user wants to use lower case letters 
-      var selectlowerCase = confirm("Would you like to use lower case letters?");
+      var selectLowerCase = confirm("Would you like to use lower case letters?");
       // Confirm whether user wants to use upper case letters
       var selectUpperCase = confirm("Would you like to use upper case letters?");
+      //Confirm whether user wants to use numeric characters 
+      var selectNumber = confirm("Would you like to use numbers?");
       //Confirm whether user wants to use special symbols
       var selectSpecial = confirm("Would you like to user special characters?");
-  
-      // Requirements for password lenght
-      if (number <= 7) {
-        // ALert user - might be redundant.
-        alert("The number you entered " + number + " does not meet the length requirement.");
-        var number = parseInt(prompt("Enter length of password.* Length must be between 8 and 128 characters",""));
-      } else if (number >= 101){
-        parseInt(prompt("Please enter a number from 8 to 128"))
-      } else if (isNan(number)){
-        parseInt(prompt("Please enter a number from 8 to 128"))
-        //Number of characters in password
-      } else(){
-      }
-      // Create for loop to choose password characters
-      for (var i = 0; i<= number;i++){
-          userPassword = userPassword + 
-      }
 
-  
-      // Function that will generate the password 
 
+
+      generatePassword();
+
+      alert("Your Password is"+ userPassword);
+
+      //Generate password 
+      function generatePassword() {
+        if (selectLowerCase) {
+        passwordGroup += lowerCase;
+        }
+        if (selectUpperCase) {
+        passwordGroup += upperCase;
+        }
+        if (selectNumber) {
+        passwordGroup += numbers;
+        }
+        if (selectSpecial) {
+        passwordGroup += specialCharacter;
+        }
+        for (let i = 0; i < plength; i++) {
+          userPassword += passwordGroup.charAt(
+          Math.floor(Math.random() * passwordGroup.length)
+          );
+        }
+        return userPassword;
+      }
 
     </script>
   </body>
