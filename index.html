@@ -34,12 +34,16 @@
       //Request user to enter the length of the password
       var plength = parseInt(prompt("Enter length of password.",""));
 
+      //Require number
+      while (isNaN(plength)) {
+        var plength = parseInt(prompt("This is not a number. Please enter a number between 8 - 128.",""));
+      } 
+
       
 
       //Requirements for password length
       while (plength < 8 || plength > 128){
         var plength = parseInt(prompt("Enter length of password.* Length must be between 8 - 128 characters",""));
-
       } 
       
       // Confirm whether user wants to use lower case letters 
