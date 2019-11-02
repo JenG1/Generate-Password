@@ -11,7 +11,8 @@ Page Layout
 Page includes a text area where the generated password will be written as well as a button, which when clicked, will copy the password to the user's clipboard.
 
 Password Length:
-Displays a prompt requesting user to input password length.![Enter Length Prompt](Images/pwLength.png). Criteria for password is a number. The number is equal to the length of the generated password. User input should be a number between 8 and 128. There are checks for user input. ![Not a Number Check](Images/NaNExample.png)
+Displays a prompt requesting user to input password length. [Enter Length Prompt](Images/pwLength.png). Criteria for password is a number. The number is equal to the length of the generated password. User input should be a number between 8 and 128. There are checks for user input. 
+[Not a Number Check](Images/NaNExample.png)
 
 Other Criteria:
 User will confirm different criteria that will be included in their generated password.
